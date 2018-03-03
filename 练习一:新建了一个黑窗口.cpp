@@ -1,4 +1,8 @@
 /*
+参考源码:
+https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/1.1.hello_window/hello_window.cpp
+*/
+/*
 请确认是在包含GLFW的头文件之前包含了GLAD的头文件。
 GLAD的头文件包含了正确的OpenGL头文件（例如GL/gl.h），所以需要在其它依赖于OpenGL的头文件之前包含GLAD。
 
