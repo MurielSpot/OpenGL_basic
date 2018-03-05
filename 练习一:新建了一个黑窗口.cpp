@@ -52,6 +52,14 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+	/*
+	http://www.glfw.org/docs/latest/window.html#window_hints
+	
+	Window creation hints
+	There are a number of hints that can be set before the creation of a window and context. Some affect the window itself, others affect the framebuffer or context. These hints are set to their default values each time the library is initialized with glfwInit, can be set individually with glfwWindowHint and reset all at once to their defaults with glfwDefaultWindowHints.
+	Note that hints need to be set before the creation of the window and context you wish to have the specified attributes.
+	*/
+	
 	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	//如果使用的是Mac OS X系统，你还需要加下面这行代码glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);到你的初始化代码中这些配置才能起作用（将上面的代码解除注释）
 	
