@@ -1,5 +1,6 @@
 /*
 把颜色数据加进顶点数据中。我们将把颜色数据添加为3个float值至vertices数组。我们将把三角形的三个角分别指定为红色、绿色和蓝色.
+显示出来的是一个蓝绿红的调色板.
 */
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
