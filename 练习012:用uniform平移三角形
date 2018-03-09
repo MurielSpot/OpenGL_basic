@@ -1,0 +1,24 @@
+/*
+使用uniform定义一个水平偏移量，在顶点着色器中使用这个偏移量把三角形移动到屏幕右侧：参考解答
+*/
+// In your CPP file:
+// ======================
+float offset = 0.5f;
+
+glUniform1f(glGetUniformLocation(ourShader.Program, "xOffset"), offset);//这句放在渲染循环外面,无法起到移动三角形的效果,可能与ourShader.use()还没使用有关.
+
+// In your vertex shader:
+// ======================
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+
+out vec3 ourColor;
+
+uniform float xOffset;
+
+void main()
+{
+    gl_Position = vec4(aPos.x + xOffset, aPos.y, aPos.z, 1.0); // add the xOffset to the x position of the vertex position
+    ourColor = aColor;
+}
