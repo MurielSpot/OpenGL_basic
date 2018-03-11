@@ -2,6 +2,9 @@
 使用了两张图片,将它们混合再了一起.
 通过将纹理绑定到不同的纹理单元来做的.
 shader_s.h头文件和练习13的一样.
+
+用下面语句把图片正过来了:
+stbi_set_flip_vertically_on_load(true);
 */
 
 #include <glad/glad.h>
