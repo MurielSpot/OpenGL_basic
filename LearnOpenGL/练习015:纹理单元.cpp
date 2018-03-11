@@ -5,6 +5,37 @@ shader_s.h头文件和练习13的一样.
 
 用下面语句把图片正过来了:
 stbi_set_flip_vertically_on_load(true);
+
+顶点着色器内容:
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+layout (location = 2) in vec2 aTexCoord;
+
+out vec3 ourColor;
+out vec2 TexCoord;
+
+void main()
+{
+	gl_Position = vec4(aPos, 1.0);
+	ourColor=aColor;
+	TexCoord=aTexCoord;
+}
+
+片段着色器内容:
+#version 330 core
+out vec4 FragColor;
+
+in vec3 ourColor;
+in vec2 TexCoord;
+
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+
+void main()
+{
+	FragColor =mix(texture(texture1,TexCoord),texture(texture2,TexCoord),0.3);
+}
 */
 
 #include <glad/glad.h>
