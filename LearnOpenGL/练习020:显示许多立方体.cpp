@@ -1,4 +1,8 @@
 /*
+价格时间就可以让所有立方体转起来,如果不改动角度,最前面的那个立方体不动.
+float angle = 20.0f * i+30.0f;
+model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+
 着色器类头文件不变.
 
 vs:
