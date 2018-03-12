@@ -1,6 +1,31 @@
 /*
 z缓冲.
 深度测试.
+
+vs:
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec2 aTexCoord;
+out vec2 TexCoord;
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+void main()
+{
+    gl_Position = projection * view * model * vec4(aPos, 1.0f);
+    TexCoord = vec2(aTexCoord.x, 1.0 - aTexCoord.y);
+}
+
+fs:
+#version 330 core
+out vec4 FragColor;
+in vec2 TexCoord;
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+void main()
+{
+    FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2);
+}
 */
 
 #include <glad/glad.h>
@@ -23,8 +48,8 @@ void processInput(GLFWwindow *window);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
-char shader_vs_path[100] = "D:/Files/VisualStudioFiles/opengl/graphics/3.3.shader.vs";
-char shader_fs_path[100] = "D:/Files/VisualStudioFiles/opengl/graphics/3.3.shader.fs";
+char shader_vs_path[100] = "D:/Files/VisualStudioFiles/opengl/graphics/shader.vs";
+char shader_fs_path[100] = "D:/Files/VisualStudioFiles/opengl/graphics/shader.fs";
 char texture_picture_path_1[100] = "D:/multimedia/pictures/xiaomai.jpeg";
 char texture_picture_path_2[100]= "D:/multimedia/pictures/back.png";
 
