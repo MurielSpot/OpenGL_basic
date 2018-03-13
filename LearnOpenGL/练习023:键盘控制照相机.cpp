@@ -1,5 +1,6 @@
 /*
 vs,fs没变.
+增加了控制输入处理速度的变量.
 */
 
 #include <glad/glad.h>
